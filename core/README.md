@@ -31,7 +31,7 @@ export default function Demo() {
       <input value={value} onChange={(evn) => setValue(evn.target.value)} />
       <Keywords value={value}>
         Highlight a keyword in a piece of text and return a React element.
-        <br />
+
         React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
 
         Build encapsulated components that manage their own state, then compose them to make complex UIs.
