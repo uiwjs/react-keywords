@@ -2,7 +2,6 @@ import { FC, Fragment, PropsWithChildren, useMemo } from 'react';
 
 export interface KeywordsProps {
   value?: string;
-  children?: string;
   color?: string;
   backgroundColor?: string;
   render?: (keyword: string, color: string, backgroundColor: string) => JSX.Element;
@@ -23,9 +22,9 @@ const Highlight: FC<PropsWithChildren<HighlightProps>> = (props) => {
   );
 };
 
-export default function Keywords(props: KeywordsProps) {
+const KeywordsInner: FC<PropsWithChildren<KeywordsProps>> = (props) => {
   const { children, color = 'inherit', backgroundColor = '#ffff00', value, render } = props;
-  if (typeof children !== 'string') return children;
+  if (typeof children !== 'string') return <Fragment>{children}</Fragment>;
   const splitMatch = new RegExp(`${value}`, 'ig');
   const matched = children.split(splitMatch);
   return (
@@ -45,4 +44,6 @@ export default function Keywords(props: KeywordsProps) {
       })}
     </Fragment>
   );
-}
+};
+
+export default KeywordsInner;
