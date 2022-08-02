@@ -65,7 +65,7 @@ jobs:
           body: |
             [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/react-keywords@${{steps.changelog.outputs.version}}/file/README.md)
 
-            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/uiwjs/react-md-editor/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
+            Documentation ${{ steps.changelog.outputs.tag }}: https://raw.githack.com/uiwjs/react-keywords/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html  
             Comparing Changes: ${{ steps.changelog.outputs.compareurl }} 
 
             ```bash
