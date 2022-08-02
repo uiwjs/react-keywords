@@ -1,6 +1,6 @@
 {
   "name": "www",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "scripts": {
     "build": "kkt build",
@@ -28,7 +28,7 @@
     "react": "~18.2.0",
     "react-code-preview-layout": "^2.0.6",
     "react-dom": "~18.2.0",
-    "react-keywords": "0.0.2",
+    "react-keywords": "0.0.3",
     "styled-components": "^5.3.5"
   },
   "eslintConfig": {
