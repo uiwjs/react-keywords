@@ -1,0 +1,12 @@
+**/*.md
+**/*.svg
+**/*.ejs
+**/*.html
+**/*.yml
+package-lock.json
+node_modules
+dist
+build
+cjs
+esm
+test

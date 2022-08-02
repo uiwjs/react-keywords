@@ -1,0 +1,40 @@
+{
+  "name": "react-keywords",
+  "private": true,
+  "scripts": {
+    "prepare": "husky install",
+    "watch": "npm run-script watch --workspace react-keywords",
+    "build": "npm run build --workspace=react-keywords",
+    "doc": "npm run-script build --workspace www",
+    "start": "npm run-script start --workspace www",
+    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
+  },
+  "keywords": [],
+  "author": "jaywcjlove",
+  "license": "ISC",
+  "workspaces": [
+    "core",
+    "www"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@kkt/ncc": "^1.0.13",
+    "@kkt/less-modules": "^7.2.0",
+    "@types/react-test-renderer": "~18.0.0",
+    "husky": "^8.0.1",
+    "kkt": "^7.2.0",
+    "lerna": "^5.3.0",
+    "lint-staged": "~13.0.0",
+    "prettier": "~2.7.0",
+    "react-test-renderer": "~18.2.0",
+    "tsbb": "^3.7.6"
+  }
+}

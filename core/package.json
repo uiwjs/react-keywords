@@ -1,0 +1,30 @@
+{
+  "name": "react-keywords",
+  "version": "0.0.1",
+  "description": "Highlight a keyword in a piece of text and return a React element.",
+  "homepage": "https://uiwjs.github.io/react-keywords/",
+  "author": "kenny wang <wowohoo@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-keywords"
+  },
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "scripts": {
+    "watch": "tsbb watch",
+    "build": "tsbb build",
+    "test": "tsbb test --env=jsdom",
+    "coverage": "tsbb test --env=jsdom --coverage --bail"
+  },
+  "keywords": [
+    "react",
+    "react-keywords",
+    "highlight",
+    "keywords"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}
