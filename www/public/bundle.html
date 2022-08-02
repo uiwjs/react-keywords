@@ -12,17 +12,19 @@
   </head>
   <body>
     <div id="container" style="padding: 24px"></div>
-    <script src="https://unpkg.com/@uiw/react-md-editor/dist/mdeditor.min.js"></script>
+    <script src="https://unpkg.com/react-keywords/dist/keywords.min.js"></script>
     <script type="text/babel">
-      import MDEditor from '@uiw/react-md-editor';
+      import Keywords from 'react-keywords';
 
       function Demo() {
-        const [value, setValue] = React.useState("**Hello world!!!**");
+        const [value, setValue] = React.useState('react');
         return (
-          <div className="container">
-            <MDEditor value={value} onChange={setValue} />
-            <MDEditor.Markdown source={value} />
-          </div>
+          <React.Fragment>
+            <input value={value} onChange={(evn) => setValue(evn.target.value)} />
+            <Keywords value={value}>
+              Highlight a keyword in a piece of text and return a React element.
+            </Keywords>
+          </React.Fragment>
         );
       }
 

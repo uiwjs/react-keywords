@@ -14,6 +14,9 @@
   "scripts": {
     "watch": "tsbb watch",
     "build": "tsbb build",
+    "bundle": "ncc build src/index.tsx --target web --filename keywords",
+    "bundle:watch": "ncc watch src/index.tsx --target web --filename keywords",
+    "bundle:min": "ncc build src/index.tsx --target web --filename keywords --minify",
     "test": "tsbb test --env=jsdom",
     "coverage": "tsbb test --env=jsdom --coverage --bail"
   },
