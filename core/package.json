@@ -20,6 +20,12 @@
     "test": "tsbb test --env=jsdom",
     "coverage": "tsbb test --env=jsdom --coverage --bail"
   },
+  "files": [
+    "src",
+    "dist",
+    "esm",
+    "cjs"
+  ],
   "keywords": [
     "react",
     "react-keywords",
