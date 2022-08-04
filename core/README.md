@@ -98,6 +98,35 @@ export default function Demo() {
 }
 ```
 
+### caseIgnored
+
+Case is ignored by default `caseIgnored=true`.
+
+```jsx mdx:preview
+import React, { useState, Fragment } from 'react';
+import Keywords from 'react-keywords';
+
+export default function Demo() {
+  const [value, setValue] = useState('re');
+  const text = `caseIgnored={true} Highlight A Keyword In A Piece Of Text And Return A React Element.`
+  return (
+    <Fragment>
+      <input value={value} onChange={(evn) => setValue(evn.target.value)} />
+      <br />
+      <Keywords value={value} color="red" backgroundColor="">
+        {text}
+      </Keywords>
+      <br />
+      <Keywords
+        value={value}
+        caseIgnored={false}
+        children={`caseIgnored={false} Highlight a keyword in a piece of text and return a React element.`}
+      />
+    </Fragment>
+  );
+}
+```
+
 ## Support bundle
 
 ```html
@@ -137,14 +166,16 @@ export default function Demo() {
 ## API
 
 ```ts
+import { FC, PropsWithChildren } from 'react';
 export interface KeywordsProps {
   value?: string;
-  children?: string;
   color?: string;
+  caseIgnored?: boolean;
   backgroundColor?: string;
   render?: (keyword: string, color: string, backgroundColor: string) => JSX.Element;
 }
-export default function Keywords(props: KeywordsProps): JSX.Element | undefined;
+declare const KeywordsInner: FC<PropsWithChildren<KeywordsProps>>;
+export default KeywordsInner;
 ```
 
 ## Contributors

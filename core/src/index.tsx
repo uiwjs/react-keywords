@@ -3,6 +3,7 @@ import { FC, Fragment, PropsWithChildren, useMemo } from 'react';
 export interface KeywordsProps {
   value?: string;
   color?: string;
+  caseIgnored?: boolean;
   backgroundColor?: string;
   render?: (keyword: string, color: string, backgroundColor: string) => JSX.Element;
 }
@@ -23,9 +24,10 @@ const Highlight: FC<PropsWithChildren<HighlightProps>> = (props) => {
 };
 
 const KeywordsInner: FC<PropsWithChildren<KeywordsProps>> = (props) => {
-  const { children, color = 'inherit', backgroundColor = '#ffff00', value, render } = props;
+  const { children, caseIgnored = true, color = 'inherit', backgroundColor = '#ffff00', value, render } = props;
   if (typeof children !== 'string') return <Fragment>{children}</Fragment>;
-  const splitMatch = new RegExp(`${value}`, 'ig');
+  const splitMatch = new RegExp(`${value}`, caseIgnored ? 'ig' : 'g');
+  const values = value ? children.match(splitMatch) : [];
   const matched = children.split(splitMatch);
   return (
     <Fragment>
@@ -34,7 +36,7 @@ const KeywordsInner: FC<PropsWithChildren<KeywordsProps>> = (props) => {
           <Highlight
             key={idx}
             color={color}
-            value={matched.length > idx + 1 ? value : undefined}
+            value={matched.length > idx + 1 ? (values as string[])[idx] : undefined}
             render={render}
             backgroundColor={backgroundColor}
           >
