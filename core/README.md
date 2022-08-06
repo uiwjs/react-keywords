@@ -9,8 +9,9 @@ react-keywords
 
 Highlight a keyword in a piece of text and return a React element.
 
+<a href="https://uiwjs.github.io/react-keywords">
 <img width="518" alt="Highlight keyword" src="https://user-images.githubusercontent.com/1680273/182382842-c991e9ef-353d-45b0-9e5a-319b56e397d8.png">
-
+</a>
 
 ## Installation
 
