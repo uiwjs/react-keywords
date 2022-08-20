@@ -26,7 +26,7 @@ const Highlight: FC<PropsWithChildren<HighlightProps>> = (props) => {
 const KeywordsInner: FC<PropsWithChildren<KeywordsProps>> = (props) => {
   const { children, caseIgnored = true, color = 'inherit', backgroundColor = '#ffff00', value, render } = props;
   if (typeof children !== 'string') return <Fragment>{children}</Fragment>;
-  const splitMatch = new RegExp(`${value}`, caseIgnored ? 'ig' : 'g');
+  const splitMatch = new RegExp((value || '').replace(/\\/g, '\\\\'), caseIgnored ? 'ig' : 'g');
   const values = value ? children.match(splitMatch) : [];
   const matched = children.split(splitMatch);
   return (
