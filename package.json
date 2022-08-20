@@ -10,9 +10,13 @@
     "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'"
   },
-  "keywords": [],
-  "author": "jaywcjlove",
-  "license": "ISC",
+  "keywords": [
+    "keywords",
+    "react-component",
+    "react"
+  ],
+  "author": "kenny wong <wowohoo@qq.com>",
+  "license": "MIT",
   "workspaces": [
     "core",
     "www"

@@ -1,13 +1,12 @@
 {
   "name": "www",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "build": "kkt build",
     "start": "kkt start",
     "map": "source-map-explorer build/static/js/*.js --html build/website-result.html"
   },
-  "author": "jaywcjlove",
   "devDependencies": {
     "@kkt/less-modules": "~7.2.0",
     "@kkt/raw-modules": "~7.2.0",
@@ -28,7 +27,7 @@
     "react": "~18.2.0",
     "react-code-preview-layout": "^2.0.6",
     "react-dom": "~18.2.0",
-    "react-keywords": "0.0.4",
+    "react-keywords": "0.0.5",
     "styled-components": "^5.3.5"
   },
   "eslintConfig": {
