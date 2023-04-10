@@ -5,6 +5,10 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from 'react-keywords/README.md';
 import { CodeComponent, ReactMarkdownNames } from 'react-markdown/lib/ast-to-react';
 
+const Preview = CodeLayout.Preview;
+const Code = CodeLayout.Code;
+const Toolbar = CodeLayout.Toolbar;
+
 const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...props }) => {
   const $dom = useRef<HTMLDivElement>(null);
   const { 'data-meta': meta, ...rest } = props as any;
@@ -28,14 +32,14 @@ const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...prop
     const code = data.data[metaId].value || '';
     const param = getURLParameters(meta);
     return (
-      <CodeLayout
-        ref={$dom}
-        style={{ marginBottom: 10 }}
-        toolbar={param.title || 'Example'}
-        code={<pre {...rest} />}
-        text={code}
-      >
-        <Child />
+      <CodeLayout disableCheckered style={{ marginBottom: 18 }}>
+        <Preview>
+          <Child />
+        </Preview>
+        <Toolbar text={code}>{param.title || 'Example'}</Toolbar>
+        <Code>
+          <pre {...rest} />
+        </Code>
       </CodeLayout>
     );
   }
