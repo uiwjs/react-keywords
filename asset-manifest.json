@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.3781713f.css",
-    "main.js": "/static/js/main.bbbca3d0.js",
-    "refractor-prismjs-vendor.js": "/static/js/refractor-prismjs-vendor.e1f193e6.js",
-    "micromark-vendor.js": "/static/js/micromark-vendor.4ea16854.js",
+    "main.css": "/static/css/main.479365c2.css",
+    "main.js": "/static/js/main.b7d96809.js",
+    "refractor-prismjs-vendor.js": "/static/js/refractor-prismjs-vendor.00f2c9ac.js",
+    "micromark-vendor.js": "/static/js/micromark-vendor.fe3d962e.js",
     "babel-runtime-vendor.js": "/static/js/babel-runtime-vendor.42e06816.js",
-    "parse5-vendor.js": "/static/js/parse5-vendor.c1f338fd.js",
-    "react-vendor.js": "/static/js/react-vendor.79aa022a.js",
+    "parse5-vendor.js": "/static/js/parse5-vendor.2b2a1193.js",
+    "react-vendor.js": "/static/js/react-vendor.83888bb4.js",
     "index.html": "/index.html",
-    "main.3781713f.css.map": "/static/css/main.3781713f.css.map",
-    "main.bbbca3d0.js.map": "/static/js/main.bbbca3d0.js.map",
-    "refractor-prismjs-vendor.e1f193e6.js.map": "/static/js/refractor-prismjs-vendor.e1f193e6.js.map",
-    "micromark-vendor.4ea16854.js.map": "/static/js/micromark-vendor.4ea16854.js.map",
+    "main.479365c2.css.map": "/static/css/main.479365c2.css.map",
+    "main.b7d96809.js.map": "/static/js/main.b7d96809.js.map",
+    "refractor-prismjs-vendor.00f2c9ac.js.map": "/static/js/refractor-prismjs-vendor.00f2c9ac.js.map",
+    "micromark-vendor.fe3d962e.js.map": "/static/js/micromark-vendor.fe3d962e.js.map",
     "babel-runtime-vendor.42e06816.js.map": "/static/js/babel-runtime-vendor.42e06816.js.map",
-    "parse5-vendor.c1f338fd.js.map": "/static/js/parse5-vendor.c1f338fd.js.map",
-    "react-vendor.79aa022a.js.map": "/static/js/react-vendor.79aa022a.js.map"
+    "parse5-vendor.2b2a1193.js.map": "/static/js/parse5-vendor.2b2a1193.js.map",
+    "react-vendor.83888bb4.js.map": "/static/js/react-vendor.83888bb4.js.map"
   },
   "entrypoints": [
-    "static/js/refractor-prismjs-vendor.e1f193e6.js",
-    "static/js/micromark-vendor.4ea16854.js",
+    "static/js/refractor-prismjs-vendor.00f2c9ac.js",
+    "static/js/micromark-vendor.fe3d962e.js",
     "static/js/babel-runtime-vendor.42e06816.js",
-    "static/js/parse5-vendor.c1f338fd.js",
-    "static/js/react-vendor.79aa022a.js",
-    "static/css/main.3781713f.css",
-    "static/js/main.bbbca3d0.js"
+    "static/js/parse5-vendor.2b2a1193.js",
+    "static/js/react-vendor.83888bb4.js",
+    "static/css/main.479365c2.css",
+    "static/js/main.b7d96809.js"
   ]
 }
