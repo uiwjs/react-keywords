@@ -35,7 +35,7 @@
     "@types/react-test-renderer": "~18.0.0",
     "husky": "^8.0.1",
     "kkt": "^7.4.9",
-    "lerna": "^6.6.1",
+    "lerna": "^7.1.1",
     "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "react-test-renderer": "^18.2.0",
