@@ -1,18 +1,17 @@
-import React from 'react';
 import GithubCorner from '@uiw/react-github-corners';
 import '@wcj/dark-mode';
 import Keywords from 'react-keywords';
-import styled from 'styled-components';
+import { styled } from 'goober';
 import pkg from '../package.json';
 import Markdown from './Markdown';
 
-const Warpper = styled.div``;
-const Content = styled.div`
+const Warpper = styled('div')``;
+const Content = styled('div')`
   max-width: 860px;
   margin: 0 auto;
 `;
 
-const Title = styled.h1`
+const Title = styled('h1')`
   font-size: 32px;
   font-weight: bold;
   text-align: center;
