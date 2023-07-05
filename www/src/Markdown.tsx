@@ -33,7 +33,7 @@ const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...prop
     const param = getURLParameters(meta);
     return (
       <CodeLayout disableCheckered style={{ marginBottom: 18 }}>
-        <Preview style={{ whiteSpace: 'pre-wrap' }}>
+        <Preview>
           <Child />
         </Preview>
         <Toolbar text={code}>{param.title || 'Example'}</Toolbar>

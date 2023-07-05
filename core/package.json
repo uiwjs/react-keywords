@@ -1,6 +1,6 @@
 {
   "name": "react-keywords",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "Highlight a keyword in a piece of text and return a React element.",
   "homepage": "https://uiwjs.github.io/react-keywords/",
   "author": "kenny wang <wowohoo@qq.com>",

@@ -21,7 +21,7 @@ npm i react-keywords
 
 ## Basic Usage
 
-```jsx
+```jsx mdx:preview
 import React from 'react';
 import Keywords from 'react-keywords';
 
