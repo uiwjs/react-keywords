@@ -11,6 +11,15 @@
   },
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
+  "types": "./cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./cjs/index.d.ts",
+      "require": "./cjs/index.js",
+      "import": "./esm/index.js"
+    },
+    "./README.md": "./README.md"
+  },
   "scripts": {
     "watch": "tsbb watch src/*.tsx --use-babel",
     "build": "tsbb build src/*.tsx --use-babel",
