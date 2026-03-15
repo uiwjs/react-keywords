@@ -1,50 +1,12 @@
-import { useEffect, useRef } from 'react';
 import CodeLayout from 'react-code-preview-layout';
 import { getMetaId, isMeta, getURLParameters } from 'markdown-react-code-preview-loader';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import data from 'react-keywords/README.md';
-import { CodeComponent, ReactMarkdownNames } from 'react-markdown/lib/ast-to-react';
+import { Root, Element, RootContent } from 'hast';
 
-const Preview = CodeLayout.Preview;
+const MarkdownCode = CodeLayout.Preview;
 const Code = CodeLayout.Code;
 const Toolbar = CodeLayout.Toolbar;
-
-const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...props }) => {
-  const $dom = useRef<HTMLDivElement>(null);
-  const { 'data-meta': meta, ...rest } = props as any;
-
-  useEffect(() => {
-    if ($dom.current) {
-      const parentElement = $dom.current.parentElement;
-      if (parentElement && parentElement.parentElement) {
-        parentElement.parentElement.replaceChild($dom.current, parentElement);
-      }
-    }
-  }, [$dom]);
-
-  if (inline || !isMeta(meta)) {
-    return <code {...props} />;
-  }
-  const line = node.position?.start.line;
-  const metaId = getMetaId(meta) || String(line);
-  const Child = data.components[`${metaId}`];
-  if (metaId && typeof Child === 'function') {
-    const code = data.data[metaId].value || '';
-    const param = getURLParameters(meta);
-    return (
-      <CodeLayout disableCheckered style={{ marginBottom: 18 }}>
-        <Preview>
-          <Child />
-        </Preview>
-        <Toolbar text={code}>{param.title || 'Example'}</Toolbar>
-        <Code>
-          <pre {...rest} />
-        </Code>
-      </CodeLayout>
-    );
-  }
-  return <code {...rest} />;
-};
 
 export default function Markdown() {
   return (
@@ -52,8 +14,46 @@ export default function Markdown() {
       style={{ paddingTop: 30 }}
       disableCopy={true}
       source={data.source}
+      rehypeRewrite={(node: Root | RootContent, index: number, parent: Root | Element) => {
+        if (node.type === 'element' && parent && parent.type === 'root') {
+          [...parent.children].map((item) => {
+            if (item.type === 'element' && item.tagName === 'pre') {
+              const meta = (item.children[0]?.data as any)?.meta as string;
+              if (isMeta(meta)) {
+                item.tagName = 'div';
+                item.properties = {
+                  ...item.properties,
+                  'data-md': meta,
+                  'data-meta': 'preview',
+                };
+                return { ...item };
+              }
+            }
+            return item;
+          });
+        }
+      }}
       components={{
-        code: CodePreview,
+        div: ({ node, ...props }) => {
+          const { 'data-meta': meta, 'data-md': metaData, ...rest } = props as any;
+          const line = node?.position?.start.line;
+          const metaId = getMetaId(metaData) || String(line);
+          const Child = data.components[metaId];
+          if (meta !== 'preview' || !metaId || typeof Child !== 'function') return <div {...props} />;
+          const code = data.data[metaId].value || '';
+          const param = getURLParameters(meta);
+          return (
+            <CodeLayout disableCheckered style={{ marginBottom: 18 }}>
+              <MarkdownCode>
+                <Child />
+              </MarkdownCode>
+              <Toolbar text={code}>{param.title || 'Example'}</Toolbar>
+              <Code style={{ padding: 0 }}>
+                <pre {...rest} />
+              </Code>
+            </CodeLayout>
+          );
+        },
       }}
     />
   );
