@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.4560aa6b.css",
-    "main.js": "/static/js/main.5e10523a.js",
+    "main.js": "/static/js/main.2f89c985.js",
     "refractor-prismjs-vendor.js": "/static/js/refractor-prismjs-vendor.3832c0f3.js",
     "micromark-vendor.js": "/static/js/micromark-vendor.d5f31b1b.js",
     "parse5-vendor.js": "/static/js/parse5-vendor.f6e5ba93.js",
     "react-vendor.js": "/static/js/react-vendor.3b23098b.js",
     "index.html": "/index.html",
     "main.4560aa6b.css.map": "/static/css/main.4560aa6b.css.map",
-    "main.5e10523a.js.map": "/static/js/main.5e10523a.js.map",
+    "main.2f89c985.js.map": "/static/js/main.2f89c985.js.map",
     "refractor-prismjs-vendor.3832c0f3.js.map": "/static/js/refractor-prismjs-vendor.3832c0f3.js.map",
     "micromark-vendor.d5f31b1b.js.map": "/static/js/micromark-vendor.d5f31b1b.js.map",
     "parse5-vendor.f6e5ba93.js.map": "/static/js/parse5-vendor.f6e5ba93.js.map",
@@ -20,6 +20,6 @@
     "static/js/parse5-vendor.f6e5ba93.js",
     "static/js/react-vendor.3b23098b.js",
     "static/css/main.4560aa6b.css",
-    "static/js/main.5e10523a.js"
+    "static/js/main.2f89c985.js"
   ]
 }
